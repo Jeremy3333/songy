@@ -1,5 +1,23 @@
 {
   "dependencies": {
-    "discord.js": "^12.5.1"
-  }
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "github:discordjs/Commando"
+  },
+  "name": "songy",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremy3333/songy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeremy3333/songy/issues"
+  },
+  "homepage": "https://github.com/Jeremy3333/songy#readme"
 }
