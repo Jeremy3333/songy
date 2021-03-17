@@ -13,6 +13,12 @@ client.registry
     .registerGroup('music', 'Music')
     .registerCommandsIn(path.join(__dirname, 'commands'));
 
+client.server = {
+    queue: [],
+    currentVideo: { title: "", url: "" },
+    dispatcher: null
+}
+
 client.once('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
 });
