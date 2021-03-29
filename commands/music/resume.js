@@ -1,14 +1,13 @@
 const { Command, CommandoMessage } = require('discord.js-commando');
 const { StreamDispatcher } = require('discord.js')
 
-module.exports = class PauseCommand extends Command {
+module.exports = class ResumeCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'pause',
-            alias: ['pa'],
+            name: 'resume',
             group: 'music',
-            memberName: 'pause',
-            description: 'Met en pause la musique actuellement jouée.'
+            memberName: 'resume',
+            description: 'Reprend la musque qui est en pause.'
         });
     }
 
@@ -18,7 +17,6 @@ module.exports = class PauseCommand extends Command {
      * @param {String} query 
      */
     async run(message) {
-
         /**
          * @type StreamDispatcher
          */
@@ -32,14 +30,14 @@ module.exports = class PauseCommand extends Command {
             return message.say(':x: Je ne suis pas actuellement connecter a un salon vocal. Tape `-/join` pour m\'ajouter.')
         }
 
-        if (!message.client.server.dispatcher) {
+        if (!dispatcher) {
             return message.say(':x: il n\'y a actuellement aucune music en cours. Tape `-/play` pour m\'ajouter.')
         }
 
         if (dispatcher) {
-            dispatcher.pause();
+            dispatcher.resume();
         }
 
-        return message.say(":pause_button: Pause :thumbsup:");
+        return message.say(":arrow_forward: Play :notes:");
     }
 }
